@@ -87,25 +87,39 @@ class STH_Admin {
 		return array(
 			// Vertical Scrollbar
 			'y_width' => '12',
+			'y_track_gradient_type' => 'solid',
 			'y_track_color' => '#1a1a1a',
+			'y_track_color_2' => '#1a1a1a',
 			'y_track_opacity' => '100',
+			'y_thumb_gradient_type' => 'solid',
 			'y_thumb_color' => '#ff0055',
+			'y_thumb_color_2' => '#ff0055',
 			'y_thumb_hover_color' => '#ff3377',
+			'y_thumb_hover_color_2' => '#ff3377',
 			'y_thumb_radius' => '6',
 			
 			// Horizontal Scrollbar
 			'x_height' => '12',
+			'x_track_gradient_type' => 'solid',
 			'x_track_color' => '#1a1a1a',
+			'x_track_color_2' => '#1a1a1a',
 			'x_track_opacity' => '100',
+			'x_thumb_gradient_type' => 'solid',
 			'x_thumb_color' => '#00ffcc',
+			'x_thumb_color_2' => '#00ffcc',
 			'x_thumb_hover_color' => '#33ffd6',
+			'x_thumb_hover_color_2' => '#33ffd6',
 			'x_thumb_radius' => '6',
 			
 			// Corner
+			'corner_gradient_type' => 'solid',
 			'corner_color' => '#0f0f0f',
+			'corner_color_2' => '#0f0f0f',
 			'corner_opacity' => '100',
 			
 			// Effects
+			'glassmorphism' => '0',
+			'animation' => '0',
 			'neon_glow' => '0',
 			'glow_color' => '#ff0055',
 			
@@ -130,10 +144,15 @@ class STH_Admin {
 		);
 
 		add_settings_field( 'y_width', 'Width (px)', array( $this, 'render_number_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_width', 'min' => 1, 'max' => 50 ) );
-		add_settings_field( 'y_track_color', 'Track Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_track_color' ) );
+		add_settings_field( 'y_track_gradient_type', 'Track Gradient Type', array( $this, 'render_select_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_track_gradient_type', 'options' => array('solid' => 'Solid', 'linear' => 'Linear Gradient', 'radial' => 'Radial Gradient') ) );
+		add_settings_field( 'y_track_color', 'Track Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_track_color' ) );
+		add_settings_field( 'y_track_color_2', 'Track Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_track_color_2' ) );
 		add_settings_field( 'y_track_opacity', 'Track Opacity (%)', array( $this, 'render_range_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_track_opacity' ) );
-		add_settings_field( 'y_thumb_color', 'Thumb Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_color' ) );
-		add_settings_field( 'y_thumb_hover_color', 'Thumb Hover Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_hover_color' ) );
+		add_settings_field( 'y_thumb_gradient_type', 'Thumb Gradient Type', array( $this, 'render_select_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_gradient_type', 'options' => array('solid' => 'Solid', 'linear' => 'Linear Gradient', 'radial' => 'Radial Gradient') ) );
+		add_settings_field( 'y_thumb_color', 'Thumb Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_color' ) );
+		add_settings_field( 'y_thumb_color_2', 'Thumb Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_color_2' ) );
+		add_settings_field( 'y_thumb_hover_color', 'Thumb Hover Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_hover_color' ) );
+		add_settings_field( 'y_thumb_hover_color_2', 'Thumb Hover Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_hover_color_2' ) );
 		add_settings_field( 'y_thumb_radius', 'Thumb Border Radius (px)', array( $this, 'render_number_field' ), 'scroll-to-heaven', 'sth_setting_section_y', array( 'id' => 'y_thumb_radius' ) );
 
 		add_settings_section(
@@ -144,10 +163,15 @@ class STH_Admin {
 		);
 
 		add_settings_field( 'x_height', 'Height (px)', array( $this, 'render_number_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_height', 'min' => 1, 'max' => 50 ) );
-		add_settings_field( 'x_track_color', 'Track Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_track_color' ) );
+		add_settings_field( 'x_track_gradient_type', 'Track Gradient Type', array( $this, 'render_select_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_track_gradient_type', 'options' => array('solid' => 'Solid', 'linear' => 'Linear Gradient', 'radial' => 'Radial Gradient') ) );
+		add_settings_field( 'x_track_color', 'Track Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_track_color' ) );
+		add_settings_field( 'x_track_color_2', 'Track Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_track_color_2' ) );
 		add_settings_field( 'x_track_opacity', 'Track Opacity (%)', array( $this, 'render_range_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_track_opacity' ) );
-		add_settings_field( 'x_thumb_color', 'Thumb Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_color' ) );
-		add_settings_field( 'x_thumb_hover_color', 'Thumb Hover Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_hover_color' ) );
+		add_settings_field( 'x_thumb_gradient_type', 'Thumb Gradient Type', array( $this, 'render_select_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_gradient_type', 'options' => array('solid' => 'Solid', 'linear' => 'Linear Gradient', 'radial' => 'Radial Gradient') ) );
+		add_settings_field( 'x_thumb_color', 'Thumb Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_color' ) );
+		add_settings_field( 'x_thumb_color_2', 'Thumb Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_color_2' ) );
+		add_settings_field( 'x_thumb_hover_color', 'Thumb Hover Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_hover_color' ) );
+		add_settings_field( 'x_thumb_hover_color_2', 'Thumb Hover Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_hover_color_2' ) );
 		add_settings_field( 'x_thumb_radius', 'Thumb Border Radius (px)', array( $this, 'render_number_field' ), 'scroll-to-heaven', 'sth_setting_section_x', array( 'id' => 'x_thumb_radius' ) );
 
 		add_settings_section(
@@ -157,7 +181,9 @@ class STH_Admin {
 			'scroll-to-heaven'
 		);
 
-		add_settings_field( 'corner_color', 'Corner Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_corner', array( 'id' => 'corner_color' ) );
+		add_settings_field( 'corner_gradient_type', 'Corner Gradient Type', array( $this, 'render_select_field' ), 'scroll-to-heaven', 'sth_setting_section_corner', array( 'id' => 'corner_gradient_type', 'options' => array('solid' => 'Solid', 'linear' => 'Linear Gradient', 'radial' => 'Radial Gradient') ) );
+		add_settings_field( 'corner_color', 'Corner Color 1', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_corner', array( 'id' => 'corner_color' ) );
+		add_settings_field( 'corner_color_2', 'Corner Color 2', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_corner', array( 'id' => 'corner_color_2' ) );
 		add_settings_field( 'corner_opacity', 'Corner Opacity (%)', array( $this, 'render_range_field' ), 'scroll-to-heaven', 'sth_setting_section_corner', array( 'id' => 'corner_opacity' ) );
 
 		add_settings_section(
@@ -167,6 +193,8 @@ class STH_Admin {
 			'scroll-to-heaven'
 		);
 
+		add_settings_field( 'glassmorphism', 'Enable Glassmorphism', array( $this, 'render_checkbox_field' ), 'scroll-to-heaven', 'sth_setting_section_effects', array( 'id' => 'glassmorphism' ) );
+		add_settings_field( 'animation', 'Enable Animation', array( $this, 'render_checkbox_field' ), 'scroll-to-heaven', 'sth_setting_section_effects', array( 'id' => 'animation' ) );
 		add_settings_field( 'neon_glow', 'Enable Neon Glow', array( $this, 'render_checkbox_field' ), 'scroll-to-heaven', 'sth_setting_section_effects', array( 'id' => 'neon_glow' ) );
 		add_settings_field( 'glow_color', 'Glow Color', array( $this, 'render_color_field' ), 'scroll-to-heaven', 'sth_setting_section_effects', array( 'id' => 'glow_color' ) );
 		add_settings_field( 'apply_globally', 'Apply Globally', array( $this, 'render_checkbox_field' ), 'scroll-to-heaven', 'sth_setting_section_effects', array( 'id' => 'apply_globally' ) );
@@ -180,17 +208,17 @@ class STH_Admin {
 
 		foreach ( $defaults as $key => $default_val ) {
 			if ( isset( $input[ $key ] ) ) {
-				if ( in_array( $key, array( 'y_track_color', 'y_thumb_color', 'y_thumb_hover_color', 'x_track_color', 'x_thumb_color', 'x_thumb_hover_color', 'corner_color', 'glow_color' ) ) ) {
+				if ( in_array( $key, array( 'y_track_color', 'y_track_color_2', 'y_thumb_color', 'y_thumb_color_2', 'y_thumb_hover_color', 'y_thumb_hover_color_2', 'x_track_color', 'x_track_color_2', 'x_thumb_color', 'x_thumb_color_2', 'x_thumb_hover_color', 'x_thumb_hover_color_2', 'corner_color', 'corner_color_2', 'glow_color' ) ) ) {
 					$sanitized[ $key ] = sanitize_hex_color( $input[ $key ] );
 				} elseif ( in_array( $key, array( 'y_width', 'y_thumb_radius', 'x_height', 'x_thumb_radius', 'y_track_opacity', 'x_track_opacity', 'corner_opacity' ) ) ) {
 					$sanitized[ $key ] = absint( $input[ $key ] );
-				} elseif ( in_array( $key, array( 'neon_glow', 'apply_globally' ) ) ) {
+				} elseif ( in_array( $key, array( 'glassmorphism', 'animation', 'neon_glow', 'apply_globally' ) ) ) {
 					$sanitized[ $key ] = 1;
 				} else {
 					$sanitized[ $key ] = sanitize_text_field( $input[ $key ] );
 				}
 			} else {
-				if ( in_array( $key, array( 'neon_glow', 'apply_globally' ) ) ) {
+				if ( in_array( $key, array( 'glassmorphism', 'animation', 'neon_glow', 'apply_globally' ) ) ) {
 					$sanitized[ $key ] = 0;
 				}
 			}
@@ -260,5 +288,19 @@ class STH_Admin {
 			'<input type="checkbox" id="%s" name="sth_options[%s]" value="1" %s class="sth-input" />',
 			$id, $id, checked( 1, $val, false )
 		);
+	}
+
+	public function render_select_field( $args ) {
+		$id = $args['id'];
+		$options = $args['options'];
+		$val = isset( $this->options[ $id ] ) ? esc_attr( $this->options[ $id ] ) : '';
+
+		$html = sprintf( '<select id="%s" name="sth_options[%s]" class="sth-input">', $id, $id );
+		foreach( $options as $opt_value => $opt_label ) {
+			$html .= sprintf( '<option value="%s" %s>%s</option>', esc_attr( $opt_value ), selected( $val, $opt_value, false ), esc_html( $opt_label ) );
+		}
+		$html .= '</select>';
+
+		echo $html;
 	}
 }
