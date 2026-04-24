@@ -1,0 +1,182 @@
+/**
+ * Scroll to Heaven - Admin CSS
+ */
+
+.sth-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #e0e0e0;
+}
+
+.sth-wrap h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.neon-text {
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.sth-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.sth-controls-panel {
+    flex: 1 1 500px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border: 1px solid #333;
+}
+
+.sth-controls-panel .form-table {
+    margin-top: 0;
+}
+
+.sth-controls-panel .form-table th {
+    color: #b3b3b3;
+    font-weight: 500;
+}
+
+.sth-controls-panel h2 {
+    color: #fff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.sth-input {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+.sth-input:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 0 1px #00ffcc;
+    outline: none;
+}
+
+input[type=range].sth-range {
+    -webkit-appearance: none;
+    width: 60%;
+    background: transparent;
+}
+
+input[type=range].sth-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #00ffcc;
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: 0 0 10px rgba(0,255,204,0.5);
+}
+
+input[type=range].sth-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #444;
+    border-radius: 2px;
+}
+
+.sth-preview-panel {
+    flex: 1 1 400px;
+    position: sticky;
+    top: 40px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border: 1px solid #333;
+    height: fit-content;
+}
+
+.sth-preview-panel h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.sth-preview-container {
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.sth-preview-content {
+    width: 150%;
+    height: 800px;
+    padding: 20px;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.sth-preview-content p {
+    color: #888;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sth-dummy-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dummy-block {
+    width: 200px;
+    height: 150px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+#sth-submit-btn {
+    background: #00ffcc;
+    color: #000;
+    border: none;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-shadow: none;
+    box-shadow: 0 0 10px rgba(0,255,204,0.3);
+}
+
+#sth-submit-btn:hover {
+    background: #33ffd6;
+    box-shadow: 0 0 15px rgba(0,255,204,0.6);
+}
+
+@media (max-width: 900px) {
+    .sth-layout {
+        flex-direction: column;
+    }
+    .sth-preview-panel {
+        position: relative;
+        top: 0;
+    }
+}
